@@ -279,7 +279,7 @@ def ecg_plot(
                     if (store_text_bbox):
                         renderer1 = fig.canvas.get_renderer()
                         transf = ax.transData.inverted()
-                        bb = t1.get_window_extent()    
+                        bb = t1.get_tightbbox(renderer1)    
                         x1 = bb.x0*resolution/fig.dpi      
                         y1 = bb.y0*resolution/fig.dpi   
                         x2 = bb.x1*resolution/fig.dpi     
@@ -298,7 +298,7 @@ def ecg_plot(
                 if (bbox):
                     renderer1 = fig.canvas.get_renderer()
                     transf = ax.transData.inverted()
-                    bb = t1[0].get_window_extent()                                                
+                    bb = t1[0].get_tightbbox(renderer1)                                                
                     x1, y1 = bb.x0*resolution/fig.dpi, bb.y0*resolution/fig.dpi
                     x2, y2 = bb.x1*resolution/fig.dpi, bb.y1*resolution/fig.dpi
                     
@@ -314,7 +314,7 @@ def ecg_plot(
                 if (bbox):
                     renderer1 = fig.canvas.get_renderer()
                     transf = ax.transData.inverted()
-                    bb = t1[0].get_window_extent()                                                
+                    bb = t1[0].get_tightbbox(renderer1)                                               
                     x1, y1 = bb.x0*resolution/fig.dpi, bb.y0*resolution/fig.dpi
                     x2, y2 = bb.x1*resolution/fig.dpi, bb.y1*resolution/fig.dpi
 
@@ -326,7 +326,7 @@ def ecg_plot(
         if (bbox):
             renderer1 = fig.canvas.get_renderer()
             transf = ax.transData.inverted()
-            bb = t1[0].get_window_extent()  
+            bb = t1[0].get_tightbbox(renderer1)  
             if show_dc_pulse == False or (columns == 4 and (i != 0 and i != 4 and i != 8)):                                           
                 x1, y1 = bb.x0*resolution/fig.dpi, bb.y0*resolution/fig.dpi
                 x2, y2 = bb.x1*resolution/fig.dpi, bb.y1*resolution/fig.dpi
@@ -351,7 +351,7 @@ def ecg_plot(
             if (store_text_bbox):
                 renderer1 = fig.canvas.get_renderer()
                 transf = ax.transData.inverted()
-                bb = t1.get_window_extent(renderer = fig.canvas.renderer)
+                bb = t1.get_tightbbox(renderer1)
                 x1 = bb.x0*resolution/fig.dpi      
                 y1 = bb.y0*resolution/fig.dpi   
                 x2 = bb.x1*resolution/fig.dpi     
@@ -369,7 +369,7 @@ def ecg_plot(
             if (bbox):
                     renderer1 = fig.canvas.get_renderer()
                     transf = ax.transData.inverted()
-                    bb = t1[0].get_window_extent()                                                
+                    bb = t1[0].get_tightbbox(renderer1)                                                
                     x1, y1 = bb.x0*resolution/fig.dpi, bb.y0*resolution/fig.dpi
                     x2, y2 = bb.x1*resolution/fig.dpi, bb.y1*resolution/fig.dpi
         
@@ -386,7 +386,7 @@ def ecg_plot(
         if (bbox):
             renderer1 = fig.canvas.get_renderer()
             transf = ax.transData.inverted()
-            bb = t1[0].get_window_extent()  
+            bb = t1[0].get_tightbbox(renderer1)  
             if show_dc_pulse == False:                                           
                 x1, y1 = bb.x0*resolution/fig.dpi, bb.y0*resolution/fig.dpi
                 x2, y2 = bb.x1*resolution/fig.dpi, bb.y1*resolution/fig.dpi
